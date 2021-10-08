@@ -1,0 +1,37 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <!--
+    <type name="Huang\HelloWorld\Controller\Index\Example">
+        <plugin name="huang_helloworld_index"
+                type="Huang\HelloWorld\Plugin\AaaPlugin"
+                sortOrder="1" disabled="false"/>
+    </type>
+    -->
+
+    <!--
+        for：父类、抽象类、interface
+        type：实现的类
+    -->
+    <!--
+    <preference
+            for="Huang\HelloWorld\MyInterface"
+            type="Huang\HelloWorld\My" />
+    -->
+
+    <!--后端post页面数据源-->
+    <!-- name只是个字符串，其中的类不一定存在的 -->
+    <virtualType name="Huang\HelloWorld\Model\ResourceModel\Post\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">huang_helloworld_post</argument>
+            <argument name="resourceModel" xsi:type="string">Huang\HelloWorld\Model\ResourceModel\Post</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <!-- name = dataSource-name -->
+                <!-- val = virtualType - name -->
+                <item name="huang_helloworld_post_listing_data_source" xsi:type="string">Huang\HelloWorld\Model\ResourceModel\Post\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

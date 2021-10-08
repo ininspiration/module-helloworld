@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>helloworld_index_index</title>
+    </head>
+
+    <referenceContainer name="content">
+        <block class="Huang\HelloWorld\Block\IndexView" name="helloworld_index_index" as="helloworld_index_index" template="Huang_HelloWorld::index/index.phtml" />
+    </referenceContainer>
+</page>

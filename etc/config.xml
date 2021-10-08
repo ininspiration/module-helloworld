@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <!-- 标签为：section - id -->
+        <helloworld_section>
+            <!-- 标签为：group - id -->
+            <helloworld_group>
+                <!-- 标签为：field - id -->
+                <helloworld_enable>1</helloworld_enable>
+                <helloworld_display_text>Hello World!</helloworld_display_text>
+            </helloworld_group>
+        </helloworld_section>
+    </default>
+</config>

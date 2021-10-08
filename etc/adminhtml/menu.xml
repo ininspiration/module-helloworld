@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Huang_HelloWorld::helloworld_post_menu"
+             title="我的菜单"
+             module="Huang_HelloWorld"
+             sortOrder="50"
+             resource="Huang_HelloWorld::menu" />
+
+        <add id="Huang_HelloWorld::post_index"
+             title="添加文章"
+             module="Huang_HelloWorld"
+             sortOrder="51"
+             action="huang_helloworld/post/index"
+             parent="Huang_HelloWorld::helloworld_post_menu"
+             resource="Huang_HelloWorld::post" />
+
+        <add id="Huang_HelloWorld::post_bbb"
+             title="bbb"
+             module="Huang_HelloWorld"
+             sortOrder="52"
+             action="huang_helloworld/post/bbb"
+             parent="Huang_HelloWorld::helloworld_post_menu"
+             resource="Huang_HelloWorld::post_bbb" />
+
+    </menu>
+</config>

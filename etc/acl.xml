@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <!-- 根标签必须是：Magento_Backend::admin -->
+            <resource id="Magento_Backend::admin">
+                <!-- 父标签，可以是自定义，也可以是magento的 -->
+                <resource id="Huang_HelloWorld::menu" title="HelloWorld_Menu" sortOrder="51">
+                    <resource id="Huang_HelloWorld::post" title="Posts" sortOrder="10"/>
+                    <resource id="Huang_HelloWorld::post_bbb" title="Posts_bbb" sortOrder="99" />
+                </resource>
+
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Huang_HelloWorld::helloworld_config" title="helloworld_config"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
