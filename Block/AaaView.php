@@ -47,6 +47,11 @@ class AaaView extends \Magento\Framework\View\Element\Template
         return $collection->getFirstItem();
     }
 
+    public function getCount()
+    {
+        return $this->_postFactory->create()->getCollection()->count();
+    }
+
     public function getPostCollection()
     {
         $post = $this->_postFactory->create();

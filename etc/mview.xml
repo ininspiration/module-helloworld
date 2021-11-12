@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Mview/etc/mview.xsd">
+    <view id="huang_helloworld_indexer" class="Huang\HelloWorld\Model\Indexer\Test" group="indexer">
+        <subscriptions>
+            <!-- 数据表 -->
+            <table name="huang_helloworld_post" entity_column="post_id" />
+        </subscriptions>
+    </view>
+</config>

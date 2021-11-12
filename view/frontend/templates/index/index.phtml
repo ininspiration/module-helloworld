@@ -8,17 +8,36 @@
 <h1>index. html</h1>
 
 <hr>
+
+<?php
+    $custommodel = null;
+
+    if ($block->getPostCollection()) {
+        $custommodel = $block->getPostCollection();
+    }
+?>
 <table>
     <tr>
         <th class="post-id">ID</th>
         <th class="post-name">Name</th>
         <th>Content</th>
+
+        <th>Email</th>
     </tr>
-    <?php foreach($block->getPostCollection() as $key=>$post){?>
-        <tr>
-            <td><?=$post->getPostId()?></td>
-            <td><?=$post->getName()?></td>
-            <td><?=$post->getPostContent()?></td>
-        </tr>
-    <?php }?>
+    <?php if($custommodel && count($custommodel)): ?>
+        <?php foreach ($custommodel as $key => $post):?>
+            <tr>
+                <td><?= $post->getPostId(); ?></td>
+                <td><?= $post->getName(); ?></td>
+                <td><?= $post->getPostContent(); ?></td>
+
+                <td><?= $post->getEmail(); ?></td>
+            </tr>
+        <?php endforeach; ?>
 </table>
+<?php if ($block->getPagerHtml()): ?>
+    <div class="order-products-toolbar toolbar bottom custom-pager"><?php echo $block->getPagerHtml(); ?></div>
+<?php endif ?>
+<?php else: ?>
+    <div class="message info empty" ><span><?php echo __('You have no any data.....'); ?></span></div>
+<?php endif; ?>

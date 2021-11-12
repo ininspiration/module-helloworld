@@ -18,6 +18,7 @@ class Aaa extends Action
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
+
         \Huang\HelloWorld\Model\Post $post,
         \Huang\HelloWorld\Model\ResourceModel\Post $postResource
     )
@@ -36,9 +37,15 @@ class Aaa extends Action
         //$this->_eventManager->dispatch("huang_helloworld_display_text");
         $request = $this->getRequest();
 
-        //$this->_objectManager
         if ($request->isPost()) {
             $data = $this->getRequest()->getParams();
+
+            $validator = new \Huang\HelloWorld\Block\MyValidator();
+            $validator->validate($data);
+            if ($errors = $validator->getErrors()) {
+                var_dump($errors);
+                die;
+            }
 
             $model = $this->_post;
 

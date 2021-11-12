@@ -10,17 +10,36 @@ class Index extends Action
 
     protected $_postFactory;
 
+    protected $_logger;
+
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
 
         //这个Factory会自动生成
-        \Huang\HelloWorld\Model\PostFactory $postFactory
+        \Huang\HelloWorld\Model\PostFactory $postFactory,
+
+        \Psr\Log\LoggerInterface $logger
     )
     {
         $this->_resultPageFactory = $resultPageFactory;
 
         $this->_postFactory = $postFactory;
+
+        $this->_logger = $logger;
+
+        //saved in var/log/system.log
+        $this->_logger->emergency("aaa-emergency");
+        $this->_logger->alert("aaa-alert");
+        $this->_logger->critical("aaa-critical");
+        $this->_logger->error("aaa-error");
+        $this->_logger->warning("aaa-warning");
+        $this->_logger->notice("aaa-notice");
+        $this->_logger->info("aaa-info");
+
+        //saved in var/log/debug.log (does not work in production mode)
+        //必须开启enable-debug-logging
+        $this->_logger->debug("aaa-debug");
 
         return parent::__construct($context);
     }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Huang\HelloWorld\Block\Adminhtml;
 
 class Bbb extends \Magento\Backend\Block\Widget\Grid\Container

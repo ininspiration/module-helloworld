@@ -4,7 +4,7 @@
     <body>
         <referenceContainer name="content">
             <!-- uiComponent的配置文件名 -->
-            <uiComponent name="huang_helloworld_post_listing"/>
+            <uiComponent name="huang_helloworld_post_form"/>
         </referenceContainer>
     </body>
 </page>

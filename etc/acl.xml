@@ -6,7 +6,9 @@
             <resource id="Magento_Backend::admin">
                 <!-- 父标签，可以是自定义，也可以是magento的 -->
                 <resource id="Huang_HelloWorld::menu" title="HelloWorld_Menu" sortOrder="51">
+                    <!-- id命名规则：{vendor}_{module}::xx -->
                     <resource id="Huang_HelloWorld::post" title="Posts" sortOrder="10"/>
+                    <resource id="Huang_HelloWorld::post_create" title="Posts_Create" sortOrder="10"/>
                     <resource id="Huang_HelloWorld::post_bbb" title="Posts_bbb" sortOrder="99" />
                 </resource>
 

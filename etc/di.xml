@@ -17,7 +17,16 @@
             type="Huang\HelloWorld\My" />
     -->
 
-    <!--后端post页面数据源-->
+    <!-- 自定义的插件 -->
+    <type name="Magento\Theme\Block\Html\Topmenu">
+        <plugin name="catalogTopmenu" type="Magento\Catalog\Plugin\Block\Topmenu" />
+    </type>
+
+    <type name="Magento\Theme\Block\Html\Topmenu">
+        <plugin name="catalogTopmenu2" type="Huang\HelloWorld\Plugin\Topmenu" />
+    </type>
+
+    <!--后端post - list页面数据源-->
     <!-- name只是个字符串，其中的类不一定存在的 -->
     <virtualType name="Huang\HelloWorld\Model\ResourceModel\Post\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
@@ -35,11 +44,25 @@
         </arguments>
     </type>
 
-    <type name="Magento\Theme\Block\Html\Topmenu">
-        <plugin name="catalogTopmenu" type="Magento\Catalog\Plugin\Block\Topmenu" />
+    <type name="Huang\HelloWorld\Ui\Component\MassAction\Status\Options">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">huang_helloworld/post/massStatus</item>
+                <item name="paramName" xsi:type="string">status</item>
+                <item name="confirm" xsi:type="array">
+                    <item name="title" xsi:type="string" translatable="true">Change Status</item>
+                    <item name="message" xsi:type="string" translatable="true">Are you sure you wan't to update selected items status?</item>
+                </item>
+            </argument>
+        </arguments>
     </type>
 
-    <type name="Magento\Theme\Block\Html\Topmenu">
-        <plugin name="catalogTopmenu2" type="Huang\HelloWorld\Plugin\Topmenu" />
+    <!-- commandline -->
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="exampleSayHello" xsi:type="object">Huang\HelloWorld\Console\Sayhello</item>
+            </argument>
+        </arguments>
     </type>
 </config>

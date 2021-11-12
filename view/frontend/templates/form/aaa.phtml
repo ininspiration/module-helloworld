@@ -1,5 +1,6 @@
 <h1>aaa.html</h1>
 
+<hr>
 <form action="<?= $block->getFormUrl(); ?>" method="post" class="form" id="myform1" data-mage-init='{"validation":{}}'>
     <fieldset>
         <div>
@@ -16,13 +17,9 @@
 
 <hr>
 <div>
-    <?php
-        $row = $block->getOne();
-    ?>
-    <span><?php echo $row->getPostId() ?></span>
-    <span><?php echo $row->getName() ?></span>
-    <span><?php echo $row->getPostContent() ?></span>
+    <h1><?php echo $block->getCount(); ?></h1>
 </div>
+
 <hr>
 <table>
     <tr>
