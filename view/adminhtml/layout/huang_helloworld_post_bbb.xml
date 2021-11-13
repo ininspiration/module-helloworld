@@ -4,7 +4,7 @@
     <body>
         <referenceContainer name="content">
             <!-- block文件 -->
-            <block class="Huang\HelloWorld\Block\Adminhtml\Bbb" name="huang_post_grid">
+            <block class="Huang\HelloWorld\Block\Adminhtml\BbbPost\Bbb" name="huang_post_grid">
                 <block class="Magento\Backend\Block\Widget\Grid" name="huang_post_grid.grid" as="grid">
                     <arguments>
                         <argument name="id" xsi:type="string">post_id</argument>
@@ -16,7 +16,7 @@
                     <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" name="huang_post_grid.grid.columnSet" as="grid.columnSet">
                         <arguments>
                             <argument name="rowUrl" xsi:type="array">
-                                <item name="path" xsi:type="string">*/*/edit</item>
+                                <item name="path" xsi:type="string">*/*/bbbedit</item>
                             </argument>
                         </arguments>
                         <block class="Magento\Backend\Block\Widget\Grid\Column" as="post_id">
@@ -39,7 +39,7 @@
                         </block>
                         <block class="Magento\Backend\Block\Widget\Grid\Column" as="created_at">
                             <arguments>
-                                <argument name="header" xsi:type="string" translate="true">Created</argument>
+                                <argument name="header" xsi:type="string" translate="true">Created_At</argument>
                                 <argument name="index" xsi:type="string">created_at</argument>
                                 <argument name="type" xsi:type="string">date</argument>
                                 <argument name="column_css_class" xsi:type="string">col-id</argument>
@@ -48,7 +48,7 @@
                         </block>
                         <block class="Magento\Backend\Block\Widget\Grid\Column" as="updated_at">
                             <arguments>
-                                <argument name="header" xsi:type="string" translate="true">Modified</argument>
+                                <argument name="header" xsi:type="string" translate="true">Updated_At</argument>
                                 <argument name="index" xsi:type="string">updated_at</argument>
                                 <argument name="type" xsi:type="string">date</argument>
                                 <argument name="column_css_class" xsi:type="string">col-id</argument>

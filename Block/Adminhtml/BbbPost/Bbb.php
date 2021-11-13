@@ -1,11 +1,9 @@
 <?php
 
-namespace Huang\HelloWorld\Block\Adminhtml;
+namespace Huang\HelloWorld\Block\Adminhtml\BbbPost;
 
 class Bbb extends \Magento\Backend\Block\Widget\Grid\Container
-//class Bbb extends \Magento\Backend\Blcok\Widget\Grid\Container
 {
-
     protected function _construct()
     {
         //controller所在的文件夹
@@ -15,9 +13,9 @@ class Bbb extends \Magento\Backend\Block\Widget\Grid\Container
         $this->_blockGroup = 'Huang_HelloWorld';
 
         //<title>
-        $this->_headerText = __('bbb');
+        $this->_headerText = __('bbb Post List');
 
-        $this->_addButtonLabel = __('Create New Post');
+        $this->_addButtonLabel = __('Create New Bbb Post');
 
         parent::_construct();
     }
